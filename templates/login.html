@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login</title>
+</head>
+<body>
+     <div class="conteiner2">
+     <form action="/login" method="POST">
+        <input id="tela-cad" type="text" name="usuario" placeholder="usuario:">
+        <input id="tela-cad"type="password" name="senha" placeholder="senha:">
+        <button id="tela-cad" type="submit">Entrar</button>
+    </form>
+    </div>
+</body>
+</html>

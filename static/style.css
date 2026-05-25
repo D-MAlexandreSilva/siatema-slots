@@ -1,0 +1,573 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0cf099, #06c57a);
+    min-height: 100vh;
+}
+.conteiner {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px;
+}
+
+/* CABEÇALHO */
+#cabecalho1 {
+    width: 350px;
+
+    text-align: center;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* FORM */
+form {
+    width: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#tela-cad {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 12px;
+
+    padding: 0 15px;
+
+    font-size: 18px;
+
+    background: rgba(255,255,255,0.85);
+
+    transition: all 0.3s ease;
+}
+
+#tela-cad:focus {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 10px rgba(0,0,0,0.4),
+        0 0 20px rgba(0,0,0,0.2);
+}
+
+/* BOTÕES PRETOS */
+button {
+    width: 100%;
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: rgb(11, 11, 11);
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #111, #000);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.4);
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(135deg, #222, #111);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.5);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+a:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        width: 90%;
+        padding: 25px;
+    }
+
+    #tela-cad,
+    button {
+        height: 50px;
+        font-size: 16px;
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #0cf099, #06c57a);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.painel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    width: 350px;
+
+    padding: 35px;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+h1 {
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 10px rgba(0,0,0,0.4),
+        0 4px 10px rgba(0,0,0,0.3);
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 55px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(135deg, #111, #000);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.35);
+
+    transition: all 0.3s ease;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(135deg, #222, #111);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.4);
+}
+
+.botao:active {
+    transform: scale(0.97);
+}
+
+.botao-voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 55px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(135deg, #333, #111);
+
+    transition: 0.3s;
+}
+
+.botao-voltar:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.35);
+}
+input {
+    height: 75px;
+    font-size: 26px;
+    text-align: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    padding: 30px;
+
+    background: linear-gradient(135deg, #0cf099, #06c57a);
+
+    overflow: hidden;
+}
+
+/* PAINEL GERAL */
+.painel-geral {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    height: calc(100vh - 60px);
+}
+
+/* RESUMO */
+.resumo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+/* SALDO */
+.saldo {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    color: white;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.saldo h1 {
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 10px rgba(0,0,0,0.3),
+        0 4px 10px rgba(0,0,0,0.2);
+}
+
+.saldo p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.positivo {
+    background: linear-gradient(135deg, #00c97b, #00995e);
+}
+
+.neutro {
+    background: linear-gradient(135deg, #d4c600, #a89a00);
+}
+
+.negativo {
+    background: linear-gradient(135deg, #ff3d3d, #b80000);
+}
+
+/* TOTAIS */
+.totais {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.total-card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+}
+
+.total-card:hover {
+    transform: translateY(-5px);
+}
+
+.deposito-total {
+    background: linear-gradient(135deg, #f85c73, #e20505);
+}
+
+.saque-total {
+    background: linear-gradient(135deg,#00c97b, #00995e);
+}
+
+.total-card h2 {
+    margin-bottom: 10px;
+}
+
+.total-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* LISTAS */
+.painel-listas {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    flex: 1;
+}
+
+/* CAIXAS */
+.lista-box {
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.lista-box {
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    /* IMPORTANTE */
+   height: 420px;
+}
+
+/* ÁREA DE ROLAGEM */
+.scroll-area {
+    height: 100%;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding-right: 10px;
+}
+
+/* BARRA DE ROLAGEM */
+.scroll-area::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+
+    border-radius: 20px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.4);
+
+    border-radius: 20px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+/* CARDS */
+.card {
+    padding: 20px;
+
+    border-radius: 18px;
+
+    color: white;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+    animation: aparecer 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* CARD DEPÓSITO */
+.deposito {
+    background: linear-gradient(135deg, #f85c73, #e20505 );
+}
+
+/* CARD SAQUE */
+.saque {
+    background: linear-gradient(135deg,#00c97b, #00995e);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+}
+
+.card p {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.card span {
+    font-size: 14px;
+
+    opacity: 0.8;
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .painel-geral {
+        height: auto;
+    }
+
+    .painel-listas {
+        grid-template-columns: 1fr;
+    }
+
+    .totais {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-box {
+        height: 500px;
+    }
+}

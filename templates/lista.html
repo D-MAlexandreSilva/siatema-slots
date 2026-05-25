@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Lista</title>
+</head>
+
+<body>
+
+    <div class="painel-geral">
+
+        <!-- RESUMO -->
+        <div class="resumo">
+
+            {% if saldo > 0 %}
+
+                <div class="saldo positivo">
+                    <h1>Saldo: R$ {{ "%.2f"|format(saldo) }}</h1>
+                    <p>GANHANDO...</p>
+                </div>
+
+            {% elif saldo == 0 %}
+
+                <div class="saldo neutro">
+                    <h1>Saldo: R$ {{ "%.2f"|format(saldo) }}</h1>
+                    <p>EMPATE...</p>
+                </div>
+
+            {% else %}
+
+                <div class="saldo negativo">
+                    <h1>Saldo: R$ {{ "%.2f"|format(saldo) }}</h1>
+                    <p>Atenção! Perdendo...</p>
+                </div>
+
+            {% endif %}
+
+            <div class="totais">
+                <div class="total-card deposito-total">
+                    <h2>Total Depositado</h2>
+                    <p>R$ {{ "%.2f"|format(soma_deposito) }}</p>
+                </div>
+
+                <div class="total-card saque-total">
+                    <h2>Total Sacado</h2>
+                    <p>R$ {{ "%.2f"|format(soma_saque) }}</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LISTAS -->
+        <div class="painel-listas">
+
+            <!-- DEPÓSITOS -->
+            <div class="lista-box">
+
+                <h1>DEPÓSITOS</h1>
+
+                <div class="scroll-area">
+
+                    {% for item in depositos %}
+
+                    <div class="card deposito">
+
+                        <h2>{{ item[2] }}</h2>
+
+                        <p>
+                            Valor: R$ {{ "%.2f"|format(item[3]) }}
+                        </p>
+
+                        <span>
+                            {{ item[4] }}
+                        </span>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            <!-- SAQUES -->
+            <div class="lista-box">
+
+                <h1>SAQUES</h1>
+
+                <div class="scroll-area">
+
+                    {% for item in saques %}
+
+                    <div class="card saque">
+
+                        <h2>{{ item[2] }}</h2>
+
+                        <p>
+                            Valor: R$ {{ "%.2f"|format(item[3]) }}
+                        </p>
+
+                        <span>
+                            {{ item[4] }}
+                        </span>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

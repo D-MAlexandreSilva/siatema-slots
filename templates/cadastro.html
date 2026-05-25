@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Controle de slots</title>
+</head>
+<body>
+   
+   
+    <div class="conteiner">
+         <nav id="cabecalho1"> 
+        <h1>SISTEMA DE SLOTS</h1><hr>
+        <p>Tenha o total controle dos gastos de suas apostas.</p>
+        <p>Faça o seu cadastro, e aproveite!</p>
+    </nav>
+    <form action="/cadastrar" method="POST">
+        <input id="tela-cad" type="text" name="usuario" placeholder="usuario:">
+        <input id="tela-cad" type="password" name="senha" placeholder="senha:">
+        <button id="tela-cad" type="submit">cadastrar</button><br>
+        <a href="/login">já sou cadastrado! Entrar</a>
+    </form>
+    </div>
+</body>
+</html>
