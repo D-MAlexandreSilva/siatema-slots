@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, session
 import banco as b
 
+b.criar_tabela()
+
 app = Flask(__name__)
 
 app.secret_key = "minha_chave_secreta"
