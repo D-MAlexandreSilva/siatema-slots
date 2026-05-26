@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, session
 import banco as b
 
-b.criar_tabela()
-
 app = Flask(__name__)
-
 app.secret_key = "minha_chave_secreta"
 
+with app.app_context():
+    b.criar_tabela()
 
 @app.route("/")
 def home():
@@ -17,8 +16,12 @@ def cadastrar():
     usuario = request.form['usuario']
     senha = request.form['senha']
 
-    b.cadastrar_usuario(usuario, senha)
-    return  redirect("/login")
+    ok = b.cadastrar_usuario(usuario, senha)
+
+    if ok:
+        return redirect("/login")
+    else:
+        return "Usuário já existe"
 
 @app.route("/login")
 def logar():
@@ -39,6 +42,9 @@ def logando():
 
 @app.route("/painel")
 def painel():
+    if "usuario_id" not in session:
+        return redirect("/login")
+
     return render_template("painel.html")
 
 
@@ -53,7 +59,7 @@ def deposito():
 
        usuario_id = session["usuario_id"]
 
-       valor = request.form['valor']
+       valor = float(request.form['valor'])
  
        b.adicionar_deposito(usuario_id, valor)
 
@@ -71,7 +77,7 @@ def saque():
 
        usuario_id = session["usuario_id"]
 
-       valor = request.form['valor']
+       valor = float(request.form['valor'])
  
        b.adicionar_saque(usuario_id, valor)
 
