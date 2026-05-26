@@ -1,5 +1,6 @@
 import psycopg2
 from datetime import datetime
+import pytz
 
 # 🔌 CONEXÃO COM POSTGRESQL (Render)
 def conectar():
@@ -8,6 +9,9 @@ def conectar():
     )
     return conn
 
+def hora_brasilia():
+    tz = pytz.timezone("America/Sao_Paulo")
+    return datetime.now(tz).strftime('%d/%m/%Y %H:%M:%S')
 
 # 🏗️ CRIAR TABELAS
 def criar_tabela():
@@ -77,7 +81,7 @@ def adicionar_deposito(usuario_id, valor):
     conn = conectar()
     cursor = conn.cursor()
 
-    data_hora = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+    data_hora = hora_brasilia()
 
     cursor.execute(
         "INSERT INTO slot (usuario_id, tipo, valor, data_hora) VALUES (%s, %s, %s, %s)",
@@ -93,7 +97,7 @@ def adicionar_saque(usuario_id, valor):
     conn = conectar()
     cursor = conn.cursor()
 
-    data_hora = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+    data_hora = hora_brasilia()
 
     cursor.execute(
         "INSERT INTO slot (usuario_id, tipo, valor, data_hora) VALUES (%s, %s, %s, %s)",
