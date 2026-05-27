@@ -101,7 +101,19 @@ def lista():
 
     return render_template("lista.html", depositos=depositos, saques=saques, soma_deposito=soma_deposito, soma_saque=soma_saque, saldo=saldo)
 
+# 🚀 ROTA FLASK
+@app.route("/apagar/<int:registro_id>", methods=["POST"])
+def apagar(registro_id):
 
+    # verifica se usuário está logado
+    if "usuario_id" not in session:
+        return redirect("/login")
+
+    usuario_id = session["usuario_id"]
+
+    b.apagar_registro(registro_id, usuario_id)
+
+    return redirect("/")
 
 
 if __name__ == "__main__":

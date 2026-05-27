@@ -170,14 +170,17 @@ def soma_saque(usuario_id):
     return total or 0
 
 
-# 🧹 LIMPAR DADOS DO USUÁRIO
-def limpar_banco(usuario_id):
+# 🗑️ FUNÇÃO PARA APAGAR REGISTRO
+def apagar_registro(registro_id, usuario_id):
     conn = conectar()
     cursor = conn.cursor()
 
     cursor.execute(
-        "DELETE FROM slot WHERE usuario_id = %s",
-        (usuario_id,)
+        """
+        DELETE FROM slot
+        WHERE id = %s AND usuario_id = %s
+        """,
+        (registro_id, usuario_id)
     )
 
     conn.commit()

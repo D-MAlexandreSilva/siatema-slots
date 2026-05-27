@@ -107,7 +107,7 @@ button {
     font-size: 18px;
     font-weight: bold;
 
-    color: rgb(11, 11, 11);
+    color: rgb(249, 244, 244);
 
     cursor: pointer;
 
@@ -654,4 +654,40 @@ body {
     .card p {
         font-size: 16px;
     }
+}
+
+form{
+    width: auto;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+.botaoapa{
+    width: 100px !important;
+    height: 45px !important;
+
+    background: red !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    font-size: 18px !important;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    
+}
+.botaoapa,
+.botaoapa:hover{
+
+    background: linear-gradient(135deg, #ff2b2b, #b80000) !important;
+
+    color: white !important;
+
 }
